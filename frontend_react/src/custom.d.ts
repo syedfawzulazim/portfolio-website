@@ -1,5 +1,11 @@
-declare module "*.jpg";
-declare module "*.png";
+declare module "*.jpg" {
+  const value: any;
+  export = value;
+}
+declare module "*.png" {
+  const value: any;
+  export = value;
+}
 declare module "*.jpeg";
 declare module "*.gif";
 declare module "*.svg";
