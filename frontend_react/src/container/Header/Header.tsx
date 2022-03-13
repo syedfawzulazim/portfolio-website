@@ -29,12 +29,12 @@ const Header = () => (
           <span>👋</span>
           <div style={{ marginLeft: 20 }}>
             <p className="p-text">Hello, I am</p>
-            <h1 className="head-text">Micael</h1>
+            <h1 className="head-text">S. Azim</h1>
           </div>
         </div>
 
         <div className="tag-cmp app__flex">
-          <p className="p-text">Web Developer</p>
+          <p className="p-text">Software Engineer</p>
           <p className="p-text">Freelancer</p>
         </div>
       </div>
@@ -63,7 +63,7 @@ const Header = () => (
       {imagesName.map((image, index) => (
         <div className="circle-cmp" key={`circle-${index}`}>
           <motion.div
-            animate={{ x: [-100, 50, 0], scale: [0, 1], rotate: [0, 360] }}
+            animate={{ x: [-100, 50, 0], scale: [0.3, 1], rotate: [0, 360] }}
             transition={{
               duration: 3,
             }}
@@ -74,9 +74,9 @@ const Header = () => (
           <motion.div
             className="c2"
             animate={{ scale: [0, 1], x: [-60, -10], opacity: [0, 1] }}
-            transition={{ duration: 2, ease: "easeInOut" }}
+            transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
           >
-            <p>{image.name}</p>
+            <h3>{image.name}</h3>
           </motion.div>
         </div>
       ))}
