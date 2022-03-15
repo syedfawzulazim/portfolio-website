@@ -63,9 +63,13 @@ const Header = () => (
       {imagesName.map((image, index) => (
         <div className="circle-cmp" key={`circle-${index}`}>
           <motion.div
-            animate={{ x: [-100, 50, 0], scale: [0.3, 1], rotate: [0, 360] }}
             transition={{
-              duration: 3,
+              duration: 2.5,
+            }}
+            animate={{
+              scale: [1, 1.1, 1.1, 0.9, 0.9],
+              rotate: [0, 0, 270, 270, 0],
+              borderRadius: ["20%", "20%", "50%", "50%", "20%"],
             }}
             className="c1"
           >
