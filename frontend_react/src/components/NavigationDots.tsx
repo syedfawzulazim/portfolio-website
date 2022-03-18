@@ -1,10 +1,7 @@
 import React from "react";
-import { images, navItems } from "../constants";
+import { navItems } from "../constants";
 
-
-
-
-const NavigationDots <Props> = ({ active :{active: boolean}}) => {
+const NavigationDots = ({ active }: { active: string }): JSX.Element => {
   return (
     <div className="app__navigation">
       {navItems.map((item, index) => (
@@ -13,7 +10,9 @@ const NavigationDots <Props> = ({ active :{active: boolean}}) => {
           href={`#${item}`}
           className="app__navigation-dot"
           style={active === item ? { backgroundColor: "#313BAC" } : {}}
-        />
+        >
+          {}
+        </a>
       ))}
     </div>
   );
