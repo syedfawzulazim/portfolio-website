@@ -5,19 +5,19 @@ import "./About.scss";
 import { urlFor, client } from "../../client";
 import { AppWrap } from "../../wrapper";
 
-interface dataObj {
+interface dataObjType {
   title: string;
   description: string;
   imgUrl: string;
 }
 
 const About = () => {
-  const [abouts, setAbouts] = useState<dataObj[]>([]);
+  const [abouts, setAbouts] = useState<dataObjType[]>([]);
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
 
-    client.fetch(query).then((data: dataObj[]) => {
+    client.fetch(query).then((data) => {
       setAbouts(data);
     });
   }, []);
