@@ -10,14 +10,14 @@ interface dataObjType {
   title: string;
   description: string;
   imgUrl: string;
-  tags?: string[];
+  tags: string[];
   projectLink: string;
   codeLink: string;
 }
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-  const [works, setWorks] = useState([]);
+  const [animateCard, setAnimateCard] = useState<{}>({ y: 0, opacity: 1 });
+  const [works, setWorks] = useState<dataObjType[]>([]);
   const [filterWork, setFilterWork] = useState<dataObjType[]>([]);
 
   useEffect(() => {
@@ -27,10 +27,26 @@ const Work = () => {
       setWorks(data);
       setFilterWork(data);
     });
-    console.log(filterWork);
   }, []);
 
-  const handleWorkFilter = (item: string) => {};
+  // console.log(filterWork);
+  // console.log(works);
+
+  const handleWorkFilter = (item: string) => {
+    console.log(item);
+    setActiveFilter(item);
+    setAnimateCard({ y: 100, opacity: 0 });
+
+    setTimeout(() => {
+      setAnimateCard({ y: 0, opacity: 1 });
+
+      if (item === "All") {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
 
   return (
     <>
@@ -104,7 +120,7 @@ const Work = () => {
                 {work.description}
               </p>
               <div className="app__work-tag app__flex">
-                <p className="p-text">{works.tags[0]}</p>
+                <p className="p-text">{work.tags[0]}</p>
               </div>
             </div>
           </div>
@@ -114,4 +130,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default AppWrap(Work, "work");
