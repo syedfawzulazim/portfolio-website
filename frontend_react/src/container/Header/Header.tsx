@@ -8,7 +8,7 @@ import "./Header.scss";
 
 const scaleVariants = {
   whileInView: {
-    scale: [0, 1],
+    scale: [0.7, 1],
     opacity: [0, 1],
     transition: {
       duration: 1,
