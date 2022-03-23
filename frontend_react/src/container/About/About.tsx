@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import "./About.scss";
 import { urlFor, client } from "../../client";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 
 interface dataObjType {
   title: string;
@@ -32,7 +32,7 @@ const About = () => {
       <div className="app__profiles">
         {abouts.map((about, index) => (
           <motion.div
-            whileInView={{ opacity: [0, 1], x: [-100, 0] }}
+            whileInView={{ opacity: [0, 1], x: [-50, 0] }}
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="app__profile-item"
@@ -50,4 +50,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "about",
+  "app__whitebg"
+);

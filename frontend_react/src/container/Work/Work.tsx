@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 
 import "./Work.scss";
 import { urlFor, client } from "../../client";
@@ -68,6 +68,7 @@ const Work = () => {
       </div>
       <motion.div
         animate={animateCard}
+        whileInView={{ opacity: [0, 1], x: [-30, 0] }}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
       >
@@ -130,4 +131,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "work");
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
