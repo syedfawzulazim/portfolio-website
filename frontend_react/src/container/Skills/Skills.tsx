@@ -43,36 +43,41 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experience</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
+              whileInView={{ opacity: [0, 1], x: [-100, 0] }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
+              whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.2 },
+              }}
               className="app__skills-item app__flex"
-              key={skill.name}
+              key={`item-${index}`}
             >
-              <div
+              <motion.div
+                whileHover={{
+                  border: "1px solid #313bac",
+                  transition: { ease: "easeIn" },
+                  boxShadow:
+                    "rgba(9, 160, 230, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px",
+                }}
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
+                key={index}
               >
                 <img src={urlFor(skill.icon).toString()} alt={skill.name} />
-              </div>
+              </motion.div>
               <p className="p-text">{skill.name}</p>
             </motion.div>
           ))}
         </motion.div>
+
         <div className="app__skills-exp">
           {experiences.map((experience, index) => (
-            <motion.div className="app__skills-exp-item" key={index}>
+            <motion.div className="app__skills-exp-item" key={`item-${index}`}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
-
-              {/* {console.log(experience)}
-              {console.log("experience.works")}
-              {console.log(experience.works)}
-              {console.log("-----------------")}
-
-              {console.log(experience?.works?.map((work) => work.name))} */}
 
               <motion.div className="app__skills-exp-works">
                 {experience?.works?.map((work, index) => (
