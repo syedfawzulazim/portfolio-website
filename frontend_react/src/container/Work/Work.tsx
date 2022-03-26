@@ -33,7 +33,6 @@ const Work = () => {
   // console.log(works);
 
   const handleWorkFilter = (item: string) => {
-    console.log(item);
     setActiveFilter(item);
     setAnimateCard({ y: 100, opacity: 0 });
 

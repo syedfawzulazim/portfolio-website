@@ -30,7 +30,7 @@ const Navbar = (): JSX.Element => {
         {toggle && (
           <motion.div
             whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.85, ease: "circInOut" }}
+            transition={{ duration: 0.55, ease: "easeInOut" }}
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
