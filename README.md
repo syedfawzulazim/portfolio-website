@@ -2,7 +2,7 @@
 This portfolio website has been build using React on the Frontend and Sanity.io on the Backend for Content Management. Also used TypeScript, Sass and Framer motion.
 
 
-Live Demo :  [Portfolio Site](https://syedfazim.netlify.app).
+Live Demo : https://www.sfazim.me/
 
 
 ## Project Screen-Shots:
