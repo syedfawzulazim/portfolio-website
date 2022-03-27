@@ -6,8 +6,6 @@ import { images } from "../../constants";
 import { imagesName } from "../../constants";
 import "./Header.scss";
 import { client } from "../../client";
-import { stringify } from "querystring";
-
 const scaleVariants = {
   whileInView: {
     scale: [0.7, 1],

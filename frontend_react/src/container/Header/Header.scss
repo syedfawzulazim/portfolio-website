@@ -170,6 +170,11 @@
       border-radius: 10px;
       box-shadow: 21px 21px 93px #022d42, -21px -21px 93px #ffffff;
     }
+
+    @media screen and (max-width: 350px) {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   .c2 {
