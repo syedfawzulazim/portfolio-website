@@ -1,6 +1,7 @@
 import React, { ElementType } from "react";
 import { NavigationDots, SocialMedia } from "../components";
 
+//Wrapper JSX Element for navigator link and social media icons
 const AppWrap = (Component: ElementType, idName: string, classNames?: string) =>
   function HOC() {
     const copyRight = (
@@ -15,7 +16,7 @@ const AppWrap = (Component: ElementType, idName: string, classNames?: string) =>
         <SocialMedia />
         <div className="app__wrapper app__flex">
           <Component />
-
+          {/* shows copyright only on the last section */}
           {idName === "contact" ? copyRight : ""}
         </div>
         <NavigationDots active={idName} />
