@@ -29,9 +29,6 @@ const Work = () => {
     });
   }, []);
 
-  // console.log(filterWork);
-  // console.log(works);
-
   const handleWorkFilter = (item: string) => {
     setActiveFilter(item);
     setAnimateCard({ y: 100, opacity: 0 });
