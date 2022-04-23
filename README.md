@@ -1,6 +1,12 @@
 # Portfolio Website
 This portfolio website has been build using React on the Frontend and Sanity.io on the Backend for Content Management. Also used TypeScript, Sass and Framer motion.
 
+## Ingredients: 
+  - React
+  - Sanity.io
+  - TypeScript
+  - Sass
+  - Framer motion
 
 Live Demo : https://www.sfazim.me/
 
