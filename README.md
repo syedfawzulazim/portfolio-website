@@ -8,7 +8,7 @@ This portfolio website has been build using React on the Frontend and Sanity.io 
   - Sass
   - Framer motion
 
-Live Demo : https://www.sfazim.me/
+Live: https://www.sfazim.me/
 
 
 ## Project Screen-Shots:
